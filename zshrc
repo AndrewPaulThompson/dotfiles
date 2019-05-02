@@ -1,5 +1,4 @@
 # Aliases
-## General
 alias ll='ls -AGFlh'
 alias vim='nvim'
 alias grep='grep --color=auto'
