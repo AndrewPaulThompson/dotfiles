@@ -45,7 +45,3 @@ PROMPT=$'
 %F{244}$(prompt_prefix) %F{reset}'
 
 RPROMPT=''
-
-#PS1=$'
-#%K{32}%F{233}%~ %K{#d33682}$(git_prompt)
-#%F{244}%# %F{reset}'
