@@ -2,8 +2,10 @@
 FILES="vimrc zshrc tmux.conf"
 # Location of the backup directory
 BACKUPDIR=~/dotfiles_backup/
-# Script location directory
+# Install script(this) directory
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+# Scripts directory
+SCRIPTSDIR=~/scripts
 
 # Create backup folder if it doesn't exist
 if [ ! -d $BACKUPDIR ]; then
@@ -11,6 +13,7 @@ if [ ! -d $BACKUPDIR ]; then
     mkdir -p $BACKUPDIR
 fi
 
+# Install dotfiles
 for file in $FILES; do
     # If the current file doesn't exist
     if [ ! -f ./$file ]; then
@@ -29,3 +32,10 @@ for file in $FILES; do
     ln -s $BASEDIR/$file ~/.$file
 done
 
+# Install scripts folder
+if [ ! -d $SCRIPTSDIR ]; then
+    echo "Symlinking scripts folder to $SCRIPTSDIR"
+    ln -s $BASEDIR/scripts $SCRIPTSDIR
+else
+    echo "Scripts folder already exists, please move it"
+fi

@@ -2,7 +2,7 @@
 alias ll='ls -AGFlh'
 alias vim='nvim'
 alias grep='grep --color=auto'
-alias dev-tmux="~/dev-tmux.sh"
+alias dev-tmux="~/scripts/dev-tmux.sh"
 
 # Platform.sh CLI configuration
 export PATH="$HOME/.platformsh/bin":"$PATH"
